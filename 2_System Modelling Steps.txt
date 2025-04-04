@@ -1,0 +1,127 @@
+============================================================================
+Steps to Approach System Modeling
+============================================================================
+Define System Requirements:
+Requirement Diagram (req): Start by capturing and organizing the system requirements. This helps ensure that all stakeholder needs are documented and understood.
+
+Identify System Structure:
+Block Definition Diagram (bdd): Define the system's high-level structure by identifying the main components (blocks) and their relationships.
+Internal Block Diagram (ibd): Detail the internal structure of each block, showing how components interact within the system.
+
+Model System Behavior:
+Use Case Diagram (uc): Identify the system's functionality from the user's perspective. This helps in understanding how the system will be used.
+Activity Diagram (act): Model the flow of control and data within the system to understand the processes and workflows.
+Sequence Diagram (sd): Illustrate interactions between system components over time, focusing on the **sequence of messages exchanged**.
+
+Define State and Constraints:
+State Machine Diagram (stm): Describe the states and transitions of the system or its components.
+Parametric Diagram (par): Represent constraints on system properties, useful for performance analysis and optimization.
+
+Organize and Manage the Model:
+Package Diagram (pkg): Organize model elements into packages to manage complexity and maintain a clear structure.
+
+
+
++---------------------+
+|    Customer         |
++---------------------+
+|                     |
+|  [Initial Node]     |
+|       |             |
+|  Select Coffee Type |
+|       |             |
+|  [Decision Node]    |
+|       |             |
+|  [Choice: Hot]      |
+|       |             |
+|  Add Hot Water      |
+|       |             |
+|  [Merge Node]       |
+|       |             |
+|  [Choice: Cold]     |
+|       |             |
+|  Add Ice            |
+|       |             |
+|  [Merge Node]       |
+|       |             |
+|  Pay for Coffee     |
+|       |             |
+|  [Final Node]       |
++---------------------+
+
+
+
+Customer         Barista          Coffee Machine       Payment System
+   |                |                   |                    |
+   |---------Select Coffee Type-------->|                    |
+   |                |--Prepare Coffee-->|                    |
+   |                |<--Coffee Ready----|                    |
+   |<--Rcv Coffee --|                   |                    |
+   |                |                   |                    |
+   |--MakePayment-->|                   |                    |
+   |                |-------------Process Payment----------->|
+   |                |<--------------Payment Cfm--------------|
+   |<--Payment Cfm--|                   |                    |
+   |                |                   |                    |
+
+
+
+===========================================
+example using WC3 map modding
+===========================================
+Creating an application for generating Warcraft 3 mod maps is an exciting project! Here's a step-by-step approach using SysML to model your system:
+
+Step 1: Define System Requirements
+	Requirement Diagram (req): Capture the key requirements for your application. For example:
+		The application should allow users to create and edit maps.
+		It should support various terrain types, units, and triggers.
+		The application should save maps in a format compatible with Warcraft 3.
+Step 2: Identify System Structure
+	Block Definition Diagram (bdd): Define the main components of your application. For example:
+		User Interface (UI): Handles user interactions.
+		Map Editor: Core functionality for creating and editing maps.
+		File Manager: Manages saving and loading of map files.
+		Terrain Manager: Handles terrain types and modifications.
+		Unit Manager: Manages units and their properties.
+		Trigger Manager: Manages game triggers and events.
+Step 3: Model System Behavior
+	Use Case Diagram (uc): Identify the main use cases for your application. For example:
+		Create New Map
+		Edit Existing Map
+		Save Map
+		Load Map
+		Add Terrain
+		Add Units
+		Set Triggers
+	Activity Diagram (act): Model the workflows for key use cases. For example, the workflow for "Create New Map":
+		[Initial Node] -> Select Map Size -> Choose Terrain Type -> Add Units -> Set Triggers -> [Final Node]
+	Sequence Diagram (sd): Detail the interactions between components for specific actions. For example, the sequence for "Save Map":
+		User -> UI: Save Map
+		UI -> Map Editor: Get Map Data
+		Map Editor -> File Manager: Save Map Data
+		File Manager -> Map Editor: Confirm Save
+		Map Editor -> UI: Save Successful
+		UI -> User: Display Save Confirmation
+Step 4: Define State and Constraints
+	State Machine Diagram (stm): Describe the states and transitions of the map editor. For example:
+		States: Idle, Editing, Saving, Loading
+		Transitions: Start Editing, Save Map, Load Map, Finish Editing
+	Parametric Diagram (par): Represent constraints on system properties, such as maximum map size or number of units.
+Step 5: Organize and Manage the Model
+	Package Diagram (pkg): Organize model elements into packages to manage complexity. For example:
+	Package: User Interface
+	Package: Map Editor
+	Package: File Management
+	Package: Terrain Management
+	Package: Unit Management
+	Package: Trigger Management
+
+Example Workflow
+	Start with Requirement Diagram: Define what your application needs to achieve.
+	Create Block Definition Diagram: Outline the main components and their relationships.
+	Develop Use Case and Activity Diagrams: Capture the main functionalities and workflows.
+	Detail Interactions with Sequence Diagrams: Show how components interact for specific actions.
+	Model States with State Machine Diagrams: Describe the behavior of key components.
+	Organize with Package Diagrams: Keep your model structured and manageable.
+
+By following these steps, you can create a comprehensive SysML model for your Warcraft 3 mod map application. If you need more detailed examples or have specific questions, feel free to ask!

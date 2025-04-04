@@ -1,0 +1,37 @@
+Use Case Diagram Scenario: ATM Withdrawal
+
+Actors:
+	Customer: A person who uses the ATM to withdraw cash.
+	Bank System: The backend system that processes the transaction.
+
+Use Cases:
+	Authenticate User: The ATM verifies the customer's identity.
+	Select Transaction: The customer selects the type of transaction (e.g., withdrawal).
+	Enter Amount: The customer enters the amount to withdraw.
+	Dispense Cash: The ATM dispenses the requested amount of cash.
+	Print Receipt: The ATM prints a receipt for the transaction.
+
+Scenario Text:
+	Authenticate User:
+		The customer inserts their ATM card into the machine.
+		The ATM prompts the customer to enter their PIN.
+		The customer enters their PIN.
+		The ATM verifies the PIN with the bank system.
+		If the PIN is correct, the ATM proceeds to the next step. If not, it prompts the customer to re-enter the PIN.
+
+	Select Transaction:
+		The ATM displays a menu of transaction options.
+		The customer selects "Withdrawal" from the menu.
+
+	Enter Amount:
+		The ATM prompts the customer to enter the amount to withdraw.
+		The customer enters the desired amount.
+		The ATM verifies that the amount is within the customer's account balance and daily withdrawal limit.
+
+	Dispense Cash:
+		The ATM dispenses the requested amount of cash.
+		The ATM updates the customer's account balance in the bank system.
+
+	Print Receipt:
+		The ATM prints a receipt showing the transaction details.
+		The customer takes the receipt and the cash.
